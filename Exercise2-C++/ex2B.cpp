@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Swap(int a, int b) {
+void Swap(int &a, int &b) {
   int t = a;
   a = b;
   b = t;

@@ -2,6 +2,12 @@
 #include <stdlib.h>
 
 /* TODO: 請定義兩個 Scan 函式 */
+void Scan(int &tmp){
+   scanf("%d",&tmp);
+}
+void Scan(float &tmp){
+   scanf("%f",&tmp);
+}
 
 int main() {
   int a;

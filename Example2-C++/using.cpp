@@ -49,8 +49,15 @@ int main() {
   using namespace A;
   // using A::B;
   // using ::B;
-  printf("呼叫 B() -> ");  
-  B();     // [編譯錯誤] 這裡的 B() 有幾種可能 ?   怎麼辦 ? 
+  printf("\n");
+  printf("呼叫 B() -> \n");  
+  //B();     // [編譯錯誤] 這裡的 B() 有幾種可能 ?   怎麼辦 ? 
+  
+  printf("  A命名空間裡的B():");
+  A::B();
+  printf("\n");
+  printf("  另一種方法中絕對位置裡的::std::B():");
+  ::B();
   printf("\n");
 
   printf("呼叫 ::B() -> "); 

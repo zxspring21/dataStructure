@@ -25,7 +25,16 @@ const Grade operator+(const Grade &lhs, const Grade &rhs) {
 
 bool operator>=(const Grade &lhs, const Grade &rhs) {
   /* TODO */ 
+  printf("in");
+  return lhs.Get() >= rhs.Get();
+
 }
+
+bool operator<(const Grade &lhs, const Grade &rhs){
+   printf("yes!\n");
+   return lhs.Get() < rhs.Get();
+}
+
  
 int main() {
   Grade a = 50;
@@ -45,6 +54,10 @@ int main() {
     printf("還不錯啦\n");
   } else {
     printf("不及格\n");
+  }
+
+  if(a<60){
+  printf("not eligible! \n");
   }
 
   system("pause");

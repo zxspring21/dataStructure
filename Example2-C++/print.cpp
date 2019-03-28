@@ -19,6 +19,7 @@ int main() {
   Print('3');
 
   Print(3.);  // [編譯錯誤] 呼叫哪個 Print ?
+  // Ans: 3. -> double
   system("pause");
   return 0;
 } 

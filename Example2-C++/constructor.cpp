@@ -43,11 +43,11 @@ int main() {
 
   {
     Grade d(10);
-    Grade e();       // 此時 e 會被當作一個函式名稱 
+    //Grade e();       // 此時 e 會被當作一個函式名稱 
     Grade f = Grade(10);
     Grade g = 10;
     printf("d = %d\n", d.Get());
-    printf("e = %d\n", e.Get());  // [編譯錯誤] 請移除此行 
+    //printf("e = %d\n", e.Get());  // [編譯錯誤] 請移除此行 
     printf("f = %d\n", f.Get());
     printf("g = %d\n", g.Get());
   } // d, f, g 的生命週期在這裡結束 

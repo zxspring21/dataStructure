@@ -64,6 +64,14 @@ class BigInt {
 int main() {
 
   /* TODO */
+  BigInt num1 = BigInt(1234567);
+  BigInt num2 = BigInt(9999999);
+  BigInt num3 = BigInt(7654321);
+  BigInt result = BigInt(0);
+  result = num1.Multiply( num1.Add(num2.Multiply(num3)));
+  std::cout<<"result = ";
+  result.Print();
+  std::cout<<'\n';
 
   system("pause");
   return 0;

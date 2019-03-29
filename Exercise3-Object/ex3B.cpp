@@ -11,9 +11,18 @@ const BigInt Add(const BigInt &a, const BigInt &b);
 void Print(const BigInt &r);
 
 int main() {
+  const BigInt num1 = Create(1234567);
+  const BigInt num2 = Create(9999999);
+  const BigInt num3 = Create(7654321);
+  BigInt result;
+  result = Multiply( ( Add(num1, Multiply(num2, num3) ) ), num1);
+  //std::cout<< "result = "<<result<<std::endl; 
+  std::cout<<"result = ";
+  Print(result);
+  std::cout<<'\n';
 
-  /* TODO */
 
+  
   system("pause");
   return 0;
 }

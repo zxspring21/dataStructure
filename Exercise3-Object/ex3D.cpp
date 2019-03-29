@@ -78,7 +78,11 @@ std::ostream& operator<<(std::ostream &lhs, const BigInt &rhs) {
 int main() {
 
   /* TODO */
-
+  BigInt num1 = 1234567;
+  BigInt num2 = 9999999;
+  BigInt num3 = 7654321;
+  std::cout << "result = ";
+  std::cout << ( num1 + num2 * num3 )*num1 <<std::endl;
   system("pause");
   return 0;
 }

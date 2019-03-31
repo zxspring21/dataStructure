@@ -15,10 +15,10 @@ class IntArray {
   int Size() const { return size_; } 
 
   // 實作下列函式 
-  int &Front()      { /* TODO */ }
-  int Front() const { /* TODO */ }
-  int &Back()       { /* TODO */ }
-  int Back() const  { /* TODO */ }
+  int &Front()      { return data_[0]; }
+  int Front() const { return data_[0];  }
+  int &Back()       { return data_[size_-1]; }
+  int Back() const  { return data_[size_-1]; }
 
   int &At(int i)              { return data_[i]; }
   int At(int i) const         { return data_[i]; } 

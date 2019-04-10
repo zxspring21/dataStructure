@@ -35,34 +35,41 @@ ostream &operator<<(ostream &lhs, const Grade &rhs) {
 
 int main() {
   cout << "[Case 1]" << endl;
+  cout << "Grade a(30), b , c"<< endl;
   Grade a(30), b, c;
   cout << "a: " << a << endl;
   cout << endl;
 
   cout << "[Case 2]" << endl;
-  b = a; 
-  cout << "a: " << a << endl
-       << "b: " << b << endl;
+  cout << "b = a " << endl;
+  b = a;
+  cout << "a: " << a << endl;
+  cout << "b: " << b << endl;
   cout << endl;
 
+  
   cout << "[Case 3]" << endl;
+  cout <<" b = 50"<<endl;
   b = 50;
   cout << "b: " << b << endl;
   cout << endl;
 
   cout << "[Case 4]" << endl;
+  cout <<" c = a = 30"<<endl;
   c = a = 30;
-  cout << "a: " << a << endl
-       << "c: " << c << endl;
+  cout << "a: " << a << endl;
+  cout << "c: " << c << endl;
   cout << endl;
 
   cout << "[Case 5]" << endl;
+  cout << "( c = 20) = b"<<endl;
   (c = 20) = b;
-  cout << "b: " << b << endl
-       << "c: " << c << endl;
+  cout << "b: " << b << endl;
+  cout << "c: " << c << endl;
   cout << endl;
 
   cout << "[Case 6]" << endl;
+  cout << "Grade d = c = b:"<<endl;
   Grade d = c = b;
   cout << endl;
   return 0;

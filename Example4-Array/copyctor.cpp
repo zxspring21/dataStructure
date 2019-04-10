@@ -5,15 +5,15 @@ using namespace std;
 class Grade {
  public:
   Grade() {
-    cout << "©I¥s Grade() " << endl; 
+    cout << "call Grade() " << endl; 
     data_ = 0;
   }
   Grade(int v) {
-    cout << "©I¥s Grade(int) " << endl;
+    cout << "call Grade(int) " << endl;
     data_ = v;
   }
   Grade(const Grade& rhs) {
-    cout << "©I¥s Grade(const Grade &) " << endl;
+    cout << "call Grade(const Grade &) " << endl;
     data_ = rhs.data_;
   }
   int Get() const { return data_; }

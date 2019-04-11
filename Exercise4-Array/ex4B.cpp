@@ -32,10 +32,23 @@ class IntArray {
 // 我們可以將成員函式定義在類別宣告外, 此時函式名稱的全名是 "類別名稱::成員函式名稱" 
 void IntArray::Swap(IntArray &x) {
   /* TODO */
+  // Moving all content in ArrayA to ArrayB
+  int tmp = 0;
+  for(int i=0; i< Size(); i++){
+    tmp =  At(i);
+    At(i) = x[i];
+    x[i] = tmp;  
+  }
 }
 
 void IntArray::Reverse() {
   /* TODO */
+  int tmp = 0;
+  for(int i=0; i < Size()/2; i++){
+    tmp  = At(i);
+    At(i) = At(Size()-i-1);
+    At(Size()-i-1)= tmp;
+  }
 }
 
 ostream &operator<<(ostream &lhs, const IntArray &rhs) {
@@ -70,10 +83,10 @@ int main() {
   cout << "a: " << a << endl;
   cout << "b: " << b << endl; 
 
-
   a.Swap(b);
   cout << "a: " << a << endl;
   cout << "b: " << b << endl; 
+  cout << "end" <<endl;
   system("pause");
   return 0;
 }

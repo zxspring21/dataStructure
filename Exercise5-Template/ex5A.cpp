@@ -18,9 +18,9 @@ class Grade {
 
 // 把下面這個 Max 函式變成一個模板函式來處理各種資料類型 
 
-/* TODO */
-int Max(int a, int b, int c) {
-  int ret = a;
+template<typename T>
+T Max(T a, T b, T c) {
+  T ret = a;
   if (b > ret) ret = b;
   if (c > ret) ret = c;
   return ret;

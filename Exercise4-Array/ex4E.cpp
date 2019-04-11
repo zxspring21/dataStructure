@@ -15,13 +15,28 @@ class IntVector {
 
   /* 實作下列函式: */ 
   void Clear() {
-    /* TODO */ 
+    size_ = 0;
   }
   void PushBack(int elem) {
-    /* TODO */
+    int *newData = new int[size_+1];
+    //int newSize = size_+1;
+    for(int i=0; i< size_ ; i++){
+       newData[i] = data_[i];
+    }
+    newData[size_] = elem;
+    delete[] data_;
+    data_ = newData;
+    size_ = size_ + 1;   
   }
   void PopBack() {
-    /* TODO */
+    int *newData = new int[size_-1];
+    //int newSize = size_ -1;
+    for(int i=0; i<size_-1; i++){
+       newData[i] = data_[i];
+    }
+    delete[] data_;
+    data_ = newData;
+    size_ = size_ - 1;
   }
 
   int &operator[](int i)      { return At(i); }  

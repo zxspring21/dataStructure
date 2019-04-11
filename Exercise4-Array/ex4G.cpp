@@ -15,10 +15,32 @@ class IntVector {
 
   // 實作下列功能: 
   void Insert(int pos, int elem) {
-    /* TODO */
+    int *newData = new int[size_+1];
+    for(int i=0; i< size_+1 ; i++){
+       if(i < pos){
+          newData[i] = data_[i];
+       }else if(i == pos){
+          newData[i] = elem;
+       }else{
+          newData[i] = data_[i-1];
+       }
+    }
+    delete[] data_;
+    data_ = newData;
+    size_ = size_ + 1;
   }
   void Erase(int pos) {
-    /* TODO */
+    int *newData = new int[size_-1];
+    for(int i=0; i< size_; i++){
+       if(i < pos)
+          newData[i] = data_[i];
+       else if(i == pos) ;
+       else
+          newData[i-1] = data_[i];
+    }
+    delete[] data_;
+    data_ = newData;
+    size_ = size_ - 1;
   }
 
   int &operator[](int i)      { return At(i); }  

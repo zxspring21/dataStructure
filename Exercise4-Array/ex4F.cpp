@@ -15,10 +15,23 @@ class IntVector {
 
   // 實作下列功能:
   void PushFront(int elem) {
-    /* TODO */
+    int *newData = new int[size_+1];
+    for(int i=0; i< size_; i++){
+       newData[i+1] = data_[i];
+    }
+    newData[0] = elem;
+    delete[] data_;
+    data_ = newData; 
+    size_ = size_ + 1;
   }
   void PopFront() {
-    /* TODO */
+    int *newData = new int[size_-1];
+    for(int i=0; i< size_; i++){
+       newData[i] = data_[i+1];
+    }
+    delete[] data_;
+    data_ = newData;
+    size_ = size_ - 1;
   }
 
   int &operator[](int i)      { return At(i); }  

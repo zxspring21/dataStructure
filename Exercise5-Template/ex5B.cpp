@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <iostream>
-#include <cstdlib>
 
 class IntVector {
  public:
@@ -55,7 +53,66 @@ std::ostream &operator<<(std::ostream &lhs, const IntVector &rhs) {
 // 參照上方的 IntVector 類別來製作 Vector 模板 
 template<typename ElemType>
 class Vector {
- /* TODO */ 
+  public:
+    Vector(){
+       size_ = 0;
+       data_ = NULL; 
+    }
+    Vector(const Vector<ElemType> &rhs){
+       size_ = rhs.Size();
+       data_ = new ElemType[rhs.Size()];
+       for(int i=0; i< rhs.Size(); i++) 
+          data_[i] = rhs.data_[i];
+    }
+    
+    explicit Vector(int n){
+       size_ = n;
+       data_ = new ElemType[n];   
+    }
+
+    ~Vector(){
+       delete[] data_;
+    } 
+
+    int Size() const{
+       return size_;
+    }
+    void Resize(int n){
+       ElemType *newData = new ElemType[n];   
+       for(int i=0; i<size_ && i<n ; i++){
+          newData[i] = data_[i];  
+       }
+       delete[] data_;
+       data_ = newData;
+       size_ = n;
+    }
+    
+    ElemType &At(int i){
+       return data_[i];
+    }
+    ElemType At(int i) const{
+       return data_[i];
+    } 
+    ElemType &operator[](int i){
+       return At(i);
+    }
+    ElemType operator[](int i) const{
+       return At(i);
+    }
+    Vector<ElemType> &operator=(const Vector<ElemType> &rhs){
+       if(this != &rhs){
+         delete[] data_;
+         size_ = rhs.Size();
+         data_ = new ElemType[rhs.Size()];
+         for(int i=0; i< rhs.Size(); i++){
+            data_[i] = rhs.data_[i];
+         }
+       }
+       return *this;
+    }
+  private:
+    ElemType *data_;
+    int size_; 
 };
 
 
@@ -82,12 +139,12 @@ int main() {
   Vector<int> c = a;
   cout << "c: " << c << endl;
 
-  Vector<double>
+  Vector<double> d;
   d = b;
   cout << "d: " << d << endl; 
 
-  a.Resize(1);
-  b.Resize(1); 
+  a.Resize(2);
+  b.Resize(2); 
   cout << "a: " << a << endl
        << "b: " << b << endl;
 

@@ -9,15 +9,21 @@ struct Record {
 };
 
 void AddRecord(vector<Record> &addressbook) {
-  /* TODO */  
+  addressbook.resize(addressbook.size()+1);
+  cout << "輸入名字" <<endl;
+  cin >> addressbook[addressbook.size()-1].name;
+  cout << "輸入手機" <<endl;
+  cin >> addressbook[addressbook.size()-1].mobile;
 }
 
 void ShowRecords(const vector<Record> &addressbook) {
-  /* TODO */
+  for(int i=0; i< addressbook.size(); i++){
+    cout << ' ' << addressbook[i].name <<'\t'<< addressbook[i].mobile<<endl;
+  }
 }
 
 void ClearRecords(vector<Record> &addressbook) {
-  /* TODO */ 
+  addressbook.clear();
 }
 
 int main() {

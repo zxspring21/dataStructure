@@ -117,12 +117,28 @@ void ForwardList<ElemType>::PopFront() {
 
 template<class ElemType>
 void ForwardList<ElemType>::Clear() {
-  /* TODO */
+  Node *cur = head_;
+  while(cur != NULL){
+     Node *del = cur;
+     cur = cur->link;
+     delete del;
+     size_--;
+  }
 }
 
 template<class ElemType>
 void ForwardList<ElemType>::Swap(ForwardList<ElemType> &x) {
-  /* TODO */
+  Node *cur = head_;
+  
+  for(int i=0; i<(Size()-1) && i<x.Size(); i++){
+     ElemType tmp= cur->data;
+     cur->data = x[i];
+     x[i] = tmp;
+     cur = cur->link;
+     //x = x.link;
+     //std::cout<< "i = "<<i<< std::endl;
+  }
+  
 }
 
 template<class ElemType>
@@ -156,7 +172,8 @@ int main() {
   for (int i = 0; i < 3; ++i) { b.PushFront(i+5); }
   cout << "a: " << a << endl
        << "b: " << b << endl;
-
+       //<< a.Size()<<endl
+       //<< b.Size()<<endl;
   b.Swap(a);
   cout << "b.Swap(a);" << endl
        << "a: " << a << endl

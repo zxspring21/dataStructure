@@ -27,7 +27,15 @@ class ForwardList {
   // 新增下列函式:
   void Resize(int n);
   void Reverse(); 
-
+  void Clear(){
+    Node *cur = head_;
+    while(cur!=NULL){
+       Node *del = cur;
+       cur = cur->link;
+       delete del;
+       size_--;
+    }
+  }
   ElemType &operator[](int i)             { return At(i); }
   const ElemType &operator[](int i) const { return At(i); }
  
@@ -92,12 +100,63 @@ void ForwardList<ElemType>::PopFront() {
 // 實作下列函式:
 template<class ElemType>
 void ForwardList<ElemType>::Resize(int n) {
-  /* TODO */
+   if(size_ == 0)
+      head_ = new Node();
+   Node *cur = head_;
+   Node *del;
+   if(n > Size()){
+      for(int i=0; i<Size()-1 ;i++){
+         cur = cur->link;
+      }
+      for(int i=Size(); i< n; i++){
+         cur->link = new Node();
+         cur = cur->link;
+      }
+      cur->link = 0;
+   }else{
+      for(int i=0; i< Size()-1 ;i++){
+         if(i<n){
+            cur = cur -> link;
+         }else{
+            del = cur;
+            cur = cur->link;
+            delete del;
+         }
+      }
+      cur->link = 0;
+   }
+   size_ = n;
+
+/*
+  Node *cur = head_;
+  Node *newData = new Node();
+  for(int i=0; i< Size()-1 && i<n; i++){
+    if(i==0){
+       newData -> data = cur -> data;
+    }else{
+       newData -> link = new Node();
+       newData = newData -> link;
+       newData -> data = cur -> data;
+    }
+    cur = cur->link;
+  }
+  size_ = n;
+*/
+
 } 
 
 template<class ElemType>
 void ForwardList<ElemType>::Reverse() {
-  /* TODO */
+  Node *cur = head_;
+  Node *prev = NULL , *following = cur->link;
+  while(following != NULL){
+    following = following -> link;
+    prev = cur->link;
+  //link;
+    prev = cur;
+    cur = following;
+  }
+  prev = cur->link;
 }
 
 template<class ElemType>

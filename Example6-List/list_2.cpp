@@ -77,7 +77,7 @@ std::ostream &operator<<(std::ostream &lhs, const ForwardList<ElemType> &rhs) {
     if (i > 0) { lhs << " "; }
     lhs << rhs[i];
   }
-  return lhs;
+return  return lhs;
 }
 
 int main() {

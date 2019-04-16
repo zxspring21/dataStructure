@@ -22,10 +22,18 @@ class ForwardList {
   ElemType &At(int i);
   const ElemType &At(int i) const;
   // 實作下列操作:
-  ElemType &Front()             { /* TODO */ }
-  const ElemType &Front() const { /* TODO */ } 
-  ElemType &Back()              { /* TODO */ }
-  const ElemType &Back() const  { /* TODO */ }
+  ElemType &Front()             { return head_->data; }
+  const ElemType &Front() const { return head_->data; } 
+  ElemType &Back()              { 
+     printf("ha\n");
+     //return (ElemType&)((const ForwardList*)this) -> Back();
+     return const_cast<ElemType&> (const_cast<const ForwardList*>(this)-> Back());
+  }
+  const ElemType &Back() const  {
+     Node *cur = head_;
+     while(cur->link !=NULL) cur =cur->link;
+       return cur->data;
+  }
 
   ElemType &operator[](int i)             { return At(i); }
   const ElemType &operator[](int i) const { return At(i); }

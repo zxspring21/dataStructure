@@ -48,12 +48,19 @@ ForwardList<ElemType>::~ForwardList() {
 
 template<class ElemType>
 int ForwardList<ElemType>::Size() const {
-  /* TODO */
+   Node *cur = head_;
+   static int i=0;
+   while(cur!=NULL){
+     i++;
+     cur = cur->link;
+   }
+   return i;
 }
 
 template<class ElemType>
 bool ForwardList<ElemType>::Empty() const {
-  /* TODO */
+  if(head_ == NULL)	return true;
+  else			return false;
 } 
 
 int main() {

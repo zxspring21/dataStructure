@@ -45,6 +45,7 @@ ForwardList<ElemType>::ForwardList(int n) {
     cur = cur->link;
   }
   cur->link = 0;
+  size_--;
 }
 
 template<class ElemType>
@@ -91,12 +92,30 @@ void ForwardList<ElemType>::PopFront() {
 // 下面是這兩個函式的實作: 
 template<class ElemType>
 void ForwardList<ElemType>::PushBack(const ElemType &elem) {
-  /* TODO */
+  Node *cur = head_;
+  int numbers= Size();
+  if(numbers ==0 ){
+     head_ = new Node();
+     head_->data = elem;
+     head_->link = NULL;
+  }else{
+     for(int i=1; i<= numbers; i++){
+        if(i == numbers)
+           cur->link = new Node();
+        cur = cur->link;
+     }
+     cur->data = elem;
+     cur->link = NULL;
+  }
+  size_++;  
 } 
 
 template<class ElemType>
 void ForwardList<ElemType>::PopBack() {
-  /* TODO */
+  Node *cur = head_;
+  //while(cur!=NULL){
+  //}
+  size_--;
 } 
 
 template<class ElemType>
@@ -115,7 +134,7 @@ int main() {
   ForwardList<int> a;
   for (int i = 0; i < 5; ++i) {  a.PushBack(i);  }
   cout << "a: " << a << endl;
-
+  
   for (int i = 0; i < 3; ++i) {  a.PopBack();  }
   cout << "a: " << a << endl;
 
@@ -124,7 +143,7 @@ int main() {
 
   for (int i = 0; i < 5; ++i) {  a.PushBack(i);  }
   cout << "a: " << a << endl;
-
+  
   system("pause");
   return 0;
 }

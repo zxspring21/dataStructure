@@ -49,8 +49,8 @@ int main() {
   cout << "a: " << a << endl
        << "b: " << b << endl;
 
-  cout << "Max<Array<int, 10> >(a):   " << Max<Array<int, 10> >(a) << endl; 
-  cout << "Max<ForwardList<int> >(b): " << Max<ForwardList<int> >(b) << endl;
+  //cout << "Max<Array<int, 10> >(a):   " << Max<Array<int, 10> >(a) << endl;
+  //cout << "Max<ForwardList<int> >(b): " << Max<ForwardList<int> >(b) << endl;
 
   cout << "Max(a): " << Max(a) << endl;    
   cout << "Max(b): " << Max(b) << endl; 

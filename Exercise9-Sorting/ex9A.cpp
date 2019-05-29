@@ -8,6 +8,7 @@ using namespace std;
 struct LargerThan {
  inline bool operator()(int a, int b) const {
   // TODO
+  return !(a<b);
  }
 };
 

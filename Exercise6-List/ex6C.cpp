@@ -112,10 +112,27 @@ void ForwardList<ElemType>::PushBack(const ElemType &elem) {
 
 template<class ElemType>
 void ForwardList<ElemType>::PopBack() {
-  Node *cur = head_;
-  //while(cur!=NULL){
-  //}
-  size_--;
+    Node *cur = head_;
+    int numbers = Size();
+    if(numbers==1){
+        Node *del = cur->link;
+        cur->link = NULL;
+        delete del;
+        size_--;
+    }
+        
+    for(int i=1; i<=numbers-1; ++i){
+        //std::cout<<i<<std::endl;
+        if(i == (numbers-1) ){
+            Node *del = cur->link;
+            cur->link = NULL;
+            delete del;
+            size_--;
+            break;
+        }
+        cur = cur->link;
+    }
+    
 } 
 
 template<class ElemType>

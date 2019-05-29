@@ -56,8 +56,8 @@ int main() {
   cout << "Max<int>(b): " << Max<int>(b) << endl;
 
 
-  cout << "Max(a): " << Max(a) << endl;   // [編譯錯誤] 請移除此行 
-  cout << "Max(b): " << Max(b) << endl;   // [編譯錯誤] 請移除此行 
+  //cout << "Max(a): " << Max(a) << endl;   // [編譯錯誤] 請移除此行
+  //cout << "Max(b): " << Max(b) << endl;   // [編譯錯誤] 請移除此行
 
   return 0;
 } 

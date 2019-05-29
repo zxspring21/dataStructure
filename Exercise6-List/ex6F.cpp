@@ -58,6 +58,29 @@ const ElemType &OrderedForwardList<ElemType>::At(int i) const {
 template<class ElemType>
 void OrderedForwardList<ElemType>::Insert(const ElemType &elem) {
   /* TODO */
+    Node *newData = new Node();
+    newData->data = elem;
+    Node *cur = head_;
+    Node *past = cur;
+    for(int i=1; i<=Size(); i++){
+        past->link = cur;
+        if(elem > cur->data){
+            if(elem < cur->link->data)
+                
+        }
+        else{
+            past->link = newData;
+            newData->link= cur;
+            break;
+        }
+    }
+    if(Size()==0){
+        head_ = newData;
+        head_->link = NULL;
+    }
+    size_++;
+        
+    
 } 
 
 template<class ElemType>

@@ -7,12 +7,15 @@ class Queue {
  public:
   ElemType Front() const {
     // TODO
+      return data_.front();
   }
   void Push(const ElemType &elem) {
     // TODO
+      data_.push_back(elem);
   }
   void Pop() {
     // TODO
+      data_.pop_front();
   }
   bool Empty() const {
     return data_.empty();

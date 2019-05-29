@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <algorithm>
-
+#include <list>
 template<class ElemType>
 struct ForwardListNode {
   ElemType                   data;      // 元素 
@@ -128,17 +128,53 @@ void ForwardList<ElemType>::Clear() {
 
 template<class ElemType>
 void ForwardList<ElemType>::Swap(ForwardList<ElemType> &x) {
-  Node *cur = head_;
-  
-  for(int i=0; i<(Size()-1) && i<x.Size(); i++){
-     ElemType tmp= cur->data;
-     cur->data = x[i];
-     x[i] = tmp;
-     cur = cur->link;
-     //x = x.link;
-     //std::cout<< "i = "<<i<< std::endl;
-  }
-  
+    
+    
+    /*
+    Node *from = x.head_;
+    Node *to = head_;
+    ElemType tmp;
+     */
+    //allocate another memory
+    
+    
+    //directly change content
+    /*
+    if(x.size_ < size_){
+        while(from->link){
+            tmp = from->data;
+            from->data = to->data;
+            to->data = tmp;
+            from = from->link;
+            to = to->link;
+        }
+        
+        while(to->link){
+            Node *del = to;
+            Node *newNode = new Node();
+            newNode->data = to->data;
+            from->data =
+            
+        }
+     
+    }else{
+        while(to->link){
+            tmp = from->data;
+            to->data = from->data;
+            from->data = tmp;
+            from = from->link;
+            to = to->link;
+        }
+        while(from->link){
+            Node *newNode = new Node();
+            newNode->data = from->link->data;
+            newNode->link = NULL;
+            to->link = newNode;
+            from = from->link;
+            to = to->link;
+        }
+    }
+    */
 }
 
 template<class ElemType>

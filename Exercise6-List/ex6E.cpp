@@ -147,16 +147,20 @@ void ForwardList<ElemType>::Resize(int n) {
 
 template<class ElemType>
 void ForwardList<ElemType>::Reverse() {
-  Node *cur = head_;
-  Node *prev = NULL , *following = cur->link;
-  while(following != NULL){
-    following = following -> link;
-    prev = cur->link;
-  //link;
-    prev = cur;
-    cur = following;
+  Node *prev= head_,*cur = prev->link, *following= cur->link;
+  //prev = cur->link;
+  //cur = cur->link;
+  Node *p = cur;
+  while(cur!=NULL){
+     p = cur;
+     prev = p->link;
+     
+     
+     following = following->link;
+     cur = cur->link;
+     prev = prev->link;
   }
-  prev = cur->link;
+  head_ = following;
 }
 
 template<class ElemType>

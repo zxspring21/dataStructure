@@ -34,7 +34,8 @@ class ForwardListIterator {
   ElemType *operator->() {
     return &p_->data;
   }
- private: 
+    
+ private:
   ForwardListNode<ElemType> *p_;
 };
  

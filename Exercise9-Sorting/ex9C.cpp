@@ -18,6 +18,9 @@ ostream &operator<<(ostream &lhs, const vector<int> &rhs) {
 struct MyComp {
   inline bool operator()(int a, int b) {
     // TODO
+     
+    
+    return a%2?a<b:a>b;
   }
 };
  

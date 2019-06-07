@@ -38,6 +38,11 @@ ostream &operator<<(ostream &lhs, const vector<Person> &rhs) {
 struct CompPerson {
   inline bool operator()(const Person &a, const Person &b) {
     // TODO
+    if(a.age==b.age)
+	return a.name < b.name;
+    return a.age < b.age;
+    
+
   }
 };
  

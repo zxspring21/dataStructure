@@ -33,7 +33,7 @@ int main() {
   std::cout << std::endl
             << "配置陣列:" << std::endl;
   Grade *d = new Grade[3];
-  delete [] d; // 試試看將 [] 移除的差別 
+  delete [] d; // 試試看將 [] 移除的差別
 
   std::system("pause");
   return 0;

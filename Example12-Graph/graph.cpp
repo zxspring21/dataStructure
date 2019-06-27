@@ -4,16 +4,16 @@
 #include <algorithm>
 #include <set>
 #include <map>
- 
+
 using namespace std;
 
 template<class ElemType>
 class Graph {
  public:
   typedef vector<ElemType> VertexList;
-  typedef set<ElemType> NeighborList; 
+  typedef set<ElemType> NeighborList;
   typedef map<ElemType, NeighborList> AdjMap;
-  
+
   int Size() const { return adj_.size(); }
 
   void AddEdge(const ElemType &i, const ElemType &j) {
@@ -47,6 +47,7 @@ class Graph {
 
 int main() {
   Graph<int> g;
+
   g.AddEdge(1, 2);
   g.AddEdge(1, 3);
   g.AddEdge(2, 4);
@@ -63,21 +64,24 @@ int main() {
   for (size_t i = 0; i < vertices.size(); ++i) {
     if (i != 0) cout << ' ';
     cout << vertices[i];
-  } 
+  }
+
   cout << endl;
   // 印出所有頂點相鄰的鄰居:
+
   for (Graph<int>::VertexList::const_iterator v = vertices.begin();
        v != vertices.end(); ++v) {
     cout << "頂點 " << *v << ":";
-    
+
     Graph<int>::NeighborList neighbors = g.Neighbors(*v);
     for (Graph<int>::NeighborList::const_iterator p = neighbors.begin();
          p != neighbors.end(); ++p) {
       cout << " " << *p; 
-    }  
+    }
+
     cout << endl;
   }
-   
+
   system("pause");
   return 0;
 }

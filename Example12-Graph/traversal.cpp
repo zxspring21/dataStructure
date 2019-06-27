@@ -83,11 +83,11 @@ vector<ElemType> TraversalByBFS(Graph<ElemType> &g, const ElemType &i) {
     path.push_back(t);
     const typename Graph<ElemType>::NeighborList &neighbors = g.Neighbors(t);
     for (typename Graph<ElemType>::NeighborList::const_iterator p = neighbors.begin();
-         p != neighbors.end(); ++p) { 
+         p != neighbors.end(); ++p) {
       if (explored.find(*p) == explored.end()) {
         s.push(*p);
         explored.insert(*p);
-      } 
+      }
     }
   }
   return path;

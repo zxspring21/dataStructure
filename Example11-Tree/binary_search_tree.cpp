@@ -111,6 +111,7 @@ class BinarySearchTree {
 
     static Node* CopyTree(Node *p) {
       if (p == NULL) return p;
+      //std::cout<<"hello"<<std::endl;
       Node *ret = new Node(p->data);
       ret->left = copy_tree(p->left);
       ret->right = copy_tree(p->right);

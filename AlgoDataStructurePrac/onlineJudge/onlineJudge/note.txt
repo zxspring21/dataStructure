@@ -1,0 +1,10 @@
+backtrack(0)->  for(int i from 1-10){
+                        solution[i] = i;
+                        backtrack(i+1);
+                    }
+                        =
+                solution[1] = 1;
+                backtrack(2)->          solution[1] = 1
+                                        backtrack(2)->  
+                                        
+ 

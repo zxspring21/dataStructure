@@ -63,14 +63,7 @@ void RatInMaze(){
 }
 int main(int argc, const char * argv[]) {
     // insert code here...
-    /*
-     {1, 0, 0, 0}
-     {1, 1, 0, 1}
-     {0, 1, 0, 0}
-     {1, 1, 1, 1}
-     */
     RatInMaze();
-    
     std::cout << "Hello, World!\n";
     return 0;
 }

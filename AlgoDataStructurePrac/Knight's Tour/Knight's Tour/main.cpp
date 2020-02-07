@@ -12,7 +12,6 @@
 using namespace std;
 int KT();
 int KTUtil(int x,int y,int moveTime,int sol[N][N],int moveX[N],int moveY[N]);
-//
 void printMap(int sol[N][N]);
 int isSafe(int x,int y,int sol[N][N]);
 
